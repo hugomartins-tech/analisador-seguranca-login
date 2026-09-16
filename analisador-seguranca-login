@@ -1,0 +1,42 @@
+
+
+
+
+
+
+
+
+
+
+print("=== ANALISADOR DE SEGURANÇA ===")
+
+usuario = input("Digite o usuário: ")
+
+while True:
+try:
+tentativas = int(
+input("Digite o número de tentativas de login: ")
+)
+
+if tentativas < 0:
+print("Digite um número igual ou maior que zero.")
+else:
+break
+
+except ValueError:
+print("Entrada inválida! Digite um número inteiro.")
+
+print("\n=== ANÁLISE ===")
+print("Usuário:", usuario)
+print("Tentativas:", tentativas)
+
+if tentativas >= 5:
+print("ALERTA: Muitas tentativas de login!")
+print("Possível tentativa de ataque.")
+
+elif tentativas >= 3:
+print("ATENÇÃO: Número elevado de tentativas.")
+
+else:
+print("Comportamento normal.")
+
